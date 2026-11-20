@@ -1,94 +1,199 @@
-# BarberApp
+ <div align="center">
 
-Aplicación web para la gestión de citas y reservas de una barbería, desarrollada para el módulo de **Proyecto Intermodular** del Ciclo Formativo de Grado Superior de **Desarrollo de Aplicaciones Multiplataforma (DAM)**.
+# 💈 BarberApp
 
-## Descripción
+### Sistema web de gestión de citas para barberías
 
-BarberApp tiene como objetivo facilitar la gestión de las citas de una barbería, sustituyendo los métodos tradicionales de reserva mediante mensajes o llamadas por una aplicación web.
+**Proyecto Intermodular · Desarrollo de Aplicaciones Multiplataforma (DAM)**
 
-Los clientes podrán consultar la disponibilidad de horarios, reservar citas y consultar sus reservas. Por otro lado, el barbero podrá gestionar su agenda, establecer sus horarios de trabajo y bloquear determinados periodos.
+![Java](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-## Tecnologías utilizadas
+**Estado:** 🚧 En desarrollo
 
-- **Backend:** Java 21 y Spring Boot.
-- **Frontend:** HTML, CSS y JavaScript.
-- **Base de datos:** MySQL.
-- **Gestión de dependencias:** Maven.
-- **Entorno de desarrollo:** IntelliJ IDEA.
-- **Control de versiones:** Git y GitHub.
+</div>
 
-## Funcionalidades previstas
+---
 
-### Cliente
+## 📖 Descripción
 
-- Registro e inicio de sesión.
-- Consulta de servicios disponibles.
-- Consulta de fechas y horarios libres.
-- Reserva de citas.
-- Consulta de próximas citas e historial de reservas.
-- Cancelación de citas, según las condiciones establecidas.
+**BarberApp** es una aplicación web diseñada para facilitar la gestión de citas de una barbería, ofreciendo una alternativa a las reservas realizadas mediante llamadas o mensajes.
 
-### Barbero
+El proyecto se desarrolla para el módulo de **Proyecto Intermodular**, perteneciente al **Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)**.
 
-- Consulta y gestión de la agenda.
-- Configuración de horarios de trabajo.
-- Bloqueo de fechas y franjas horarias.
-- Gestión de los servicios ofrecidos.
+La aplicación permitirá que los clientes reserven y consulten sus citas de forma sencilla, mientras que el barbero podrá organizar su agenda y gestionar su disponibilidad.
 
-## Arquitectura
+## ✨ Funcionalidades previstas
+
+| 👤 Clientes | ✂️ Barbero |
+|---|---|
+| Registro e inicio de sesión | Consulta y gestión de la agenda |
+| Consulta de servicios | Configuración de horarios |
+| Consulta de disponibilidad | Bloqueo de fechas y horas |
+| Reserva de citas | Gestión de servicios |
+| Consulta de próximas citas e historial | Gestión de reservas |
+| Cancelación de citas | |
+
+> Las funcionalidades se implementarán progresivamente. Algunas, como la cancelación de citas, podrán incorporarse en fases posteriores.
+
+## 🛠️ Tecnologías
+
+| Componente | Tecnología |
+|---|---|
+| Backend | Java 21 · Spring Boot |
+| Frontend | HTML5 · CSS3 · JavaScript |
+| Base de datos | MySQL |
+| Gestión de dependencias | Maven |
+| Entorno de desarrollo | IntelliJ IDEA |
+| Control de versiones | Git · GitHub |
+| Comunicación | HTTP · API REST |
+
+## 🏗️ Arquitectura
 
 La aplicación seguirá una arquitectura cliente-servidor:
 
-- **Frontend:** interfaz web desarrollada con HTML, CSS y JavaScript.
-- **Backend:** API REST desarrollada con Spring Boot, encargada de procesar las peticiones y aplicar las reglas de negocio.
-- **Base de datos:** MySQL, utilizada para almacenar usuarios, servicios, citas y horarios.
+```text
+┌─────────────────────────────┐
+│          FRONTEND           │
+│    HTML · CSS · JavaScript  │
+└──────────────┬──────────────┘
+               │
+         Peticiones HTTP
+               │
+┌──────────────▼──────────────┐
+│           BACKEND           │
+│      Java · Spring Boot     │
+│           API REST          │
+└──────────────┬──────────────┘
+               │
+          Acceso a datos
+               │
+┌──────────────▼──────────────┐
+│       BASE DE DATOS         │
+│            MySQL            │
+└─────────────────────────────┘
+```
 
-La comunicación entre el frontend y el backend se realizará mediante peticiones HTTP y respuestas JSON.
+El backend gestionará las reglas de negocio, como la disponibilidad de horarios, el registro de reservas y el control de acceso de los usuarios.
 
-## Estado del desarrollo
+## 📊 Estado del proyecto
 
-El proyecto se encuentra en su fase inicial de implementación.
+El desarrollo está organizado en tareas incrementales.
 
-### Completado
+| Tarea | Descripción | Estado |
+|---|---|---|
+| T01 | Crear y configurar Spring Boot | ✅ Completada |
+| T02 | Crear la base de datos MySQL | ⏳ Pendiente |
+| T03 | Configurar la conexión Spring Boot–MySQL | ⏳ Pendiente |
+| T04 | Crear y consumir un endpoint REST de prueba | ✅ Completada |
+| T05 | Implementar registro e inicio de sesión | ⏳ Pendiente |
+| T06 | Gestionar horarios y bloqueos | ⏳ Pendiente |
+| T07 | Calcular disponibilidad | ⏳ Pendiente |
+| T08 | Implementar reservas | ⏳ Pendiente |
+| T09 | Consultar citas de los clientes | ⏳ Pendiente |
+| T10 | Desarrollar e integrar las pantallas web | ⏳ Pendiente |
 
-- [x] T01 — Crear y configurar el proyecto Spring Boot.
+### 🔍 Primera prueba de comunicación
 
-### Pendiente
+Se ha preparado un endpoint REST para comprobar la comunicación entre el frontend y el backend.
 
-- [ ] T02 — Crear la base de datos MySQL.
-- [ ] T03 — Configurar la conexión entre Spring Boot y MySQL.
-- [ ] T04 — Crear un endpoint REST de prueba.
-- [ ] T05 — Implementar el registro e inicio de sesión.
-- [ ] T06 — Implementar la gestión de horarios y bloqueos.
-- [ ] T07 — Implementar el cálculo de disponibilidad.
-- [ ] T08 — Implementar la creación de reservas.
-- [ ] T09 — Implementar la consulta de citas.
-- [ ] T10 — Desarrollar e integrar las pantallas web.
+**Endpoint:**
 
-## Instalación y ejecución
+`GET /api/prueba`
+
+**Respuesta:**
+
+```text
+Conexión con BarberApp correcta
+```
+
+Desde JavaScript se utiliza `fetch()` para realizar la petición y mostrar el texto recibido en la página web.
+
+## 🚀 Instalación y ejecución
 
 ### Requisitos
 
 - Java JDK 21.
-- Maven (o utilizar Maven Wrapper incluido en el proyecto).
-- IntelliJ IDEA u otro IDE compatible con Java.
+- IntelliJ IDEA u otro IDE compatible.
+- Git.
+- Maven Wrapper incluido en el proyecto.
 
 ### Pasos
 
-1. Clonar el repositorio de GitHub.
-2. Abrir la carpeta del proyecto en IntelliJ IDEA.
-3. Esperar a que Maven descargue las dependencias.
-4. Ejecutar la clase principal de Spring Boot.
-5. Comprobar que el servidor se inicia correctamente en el puerto `8080`.
+**1. Clonar el repositorio**
 
-La aplicación todavía no dispone de endpoints funcionales ni de conexión a la base de datos.
+```bash
+git clone https://github.com/Daviiid07/BarberApp.git
+```
 
-## Autor
+**2. Acceder al proyecto**
+
+```bash
+cd BarberApp
+```
+
+**3. Ejecutar la aplicación**
+
+Desde IntelliJ IDEA, abre el proyecto y ejecuta la clase principal de Spring Boot.
+
+Alternativamente, en Windows:
+
+```powershell
+.\mvnw.cmd spring-boot:run
+```
+
+**4. Acceder a la aplicación**
+
+Abre el navegador:
+
+`http://localhost:8080/`
+
+Para probar directamente el endpoint:
+
+`http://localhost:8080/api/prueba`
+
+> Actualmente, la aplicación se encuentra en desarrollo. La conexión con MySQL y las funcionalidades de gestión de citas todavía están pendientes de implementación.
+
+## 📁 Estructura inicial
+
+```text
+BarberApp/
+├── src/
+│   ├── main/
+│   │   ├── java/com/barberapp/
+│   │   │   ├── BarberAppApplication.java
+│   │   │   └── controller/
+│   │   │       └── PruebaController.java
+│   │   └── resources/
+│   │       ├── static/
+│   │       │   ├── index.html
+│   │       │   └── script.js
+│   │       └── application.properties
+│   └── test/
+├── pom.xml
+├── mvnw
+├── mvnw.cmd
+└── README.md
+```
+
+## 👨‍💻 Autor
 
 **David Garrido Quiles**
 
-Módulo: Proyecto intermodular de desarrollo de aplicaciones multiplataforma.
+- **Módulo:** Proyecto Intermodular
+- **Ciclo formativo:** Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)
+- **Centro educativo:** IES Gregorio Prieto
+- **Curso académico:** 2026/2027
+---
 
-Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM).
+<div align="center">
 
-IES Gregorio Prieto — Curso 2026/2027.
+**💈 BarberApp — Una forma más sencilla de gestionar las citas de tu barbería.**
+
+*Proyecto académico en desarrollo · 2026/2027*
+
+</div> 
