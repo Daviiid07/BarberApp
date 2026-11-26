@@ -87,7 +87,7 @@ El desarrollo está organizado en tareas incrementales.
 | Tarea | Descripción | Estado |
 |---|---|---|
 | T01 | Crear y configurar Spring Boot | ✅ Completada |
-| T02 | Crear la base de datos MySQL | ⏳ Pendiente |
+| T02 | Crear la base de datos MySQL | ✅ Completada |
 | T03 | Configurar la conexión Spring Boot–MySQL | ⏳ Pendiente |
 | T04 | Crear y consumir un endpoint REST de prueba | ✅ Completada |
 | T05 | Implementar registro e inicio de sesión | ⏳ Pendiente |
@@ -96,22 +96,6 @@ El desarrollo está organizado en tareas incrementales.
 | T08 | Implementar reservas | ⏳ Pendiente |
 | T09 | Consultar citas de los clientes | ⏳ Pendiente |
 | T10 | Desarrollar e integrar las pantallas web | ⏳ Pendiente |
-
-### 🔍 Primera prueba de comunicación
-
-Se ha preparado un endpoint REST para comprobar la comunicación entre el frontend y el backend.
-
-**Endpoint:**
-
-`GET /api/prueba`
-
-**Respuesta:**
-
-```text
-Conexión con BarberApp correcta
-```
-
-Desde JavaScript se utiliza `fetch()` para realizar la petición y mostrar el texto recibido en la página web.
 
 ## 🚀 Instalación y ejecución
 
@@ -162,6 +146,10 @@ Para probar directamente el endpoint:
 
 ```text
 BarberApp/
+├── database/
+│   ├── schema.sql
+│   ├── data.sql
+│   └── tests.sql
 ├── src/
 │   ├── main/
 │   │   ├── java/com/barberapp/
